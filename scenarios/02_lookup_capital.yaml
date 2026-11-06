@@ -1,0 +1,10 @@
+name: lookup_capital
+description: Look up a fixture fact and quote it.
+user_input: What is the capital of France?
+max_steps: 4
+expect:
+  status: ok
+  tool_sequence:
+    - lookup
+  answer_contains:
+    - Paris

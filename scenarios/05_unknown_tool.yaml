@@ -1,0 +1,20 @@
+name: unknown_tool
+description: The model requests a tool that is not registered.
+user_input: What is the weather in Oslo?
+max_steps: 4
+inject:
+  kind: unknown_tool
+  tool: weather
+  arguments:
+    city: Oslo
+expect:
+  status: ok
+  tool_sequence:
+    - weather
+  trace_kinds:
+    - unknown_tool
+  answer_contains:
+    - The requested tool is not available.
+  answer_not_contains:
+    - sunny
+    - degrees

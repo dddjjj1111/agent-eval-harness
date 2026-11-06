@@ -1,0 +1,18 @@
+name: tool_raises
+description: The calculator raises. The loop records the error and answers without a result.
+user_input: What is 2 plus 2?
+max_steps: 4
+inject:
+  kind: tool_raises
+  tool: calculator
+  message: injected calculator fault
+expect:
+  status: ok
+  tool_sequence:
+    - calculator
+  trace_kinds:
+    - tool_error
+  answer_contains:
+    - The tool failed and the request could not be completed.
+  answer_not_contains:
+    - The result is

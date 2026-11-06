@@ -1,0 +1,13 @@
+name: population_per_thousand
+description: Look up a fixture population, then divide that number by 1000.
+user_input: Look up the population of Tokyo and divide it by 1000.
+max_steps: 6
+expect:
+  status: ok
+  tool_sequence:
+    - lookup
+    - calculator
+  answer_contains:
+    - "13960"
+  answer_not_contains:
+    - "13960000"

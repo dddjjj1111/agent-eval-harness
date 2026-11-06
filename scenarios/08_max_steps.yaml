@@ -1,0 +1,17 @@
+name: max_steps
+description: The model never returns a final answer. The loop must stop at the step limit.
+user_input: Keep calculating.
+max_steps: 3
+inject:
+  kind: max_steps
+expect:
+  status: max_steps
+  tool_sequence:
+    - calculator
+    - calculator
+    - calculator
+  trace_kinds:
+    - tool_result
+    - max_steps
+  answer_contains:
+    - maximum number of steps

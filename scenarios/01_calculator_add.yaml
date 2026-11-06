@@ -1,0 +1,11 @@
+name: calculator_add
+description: Single arithmetic step. The answer is the calculator output.
+user_input: What is 17 plus 25?
+max_steps: 4
+expect:
+  status: ok
+  tool_sequence:
+    - calculator
+  answer_contains:
+    - "42"
+  answer_regex: '^The result is 42\.$'

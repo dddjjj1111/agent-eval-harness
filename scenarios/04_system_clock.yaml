@@ -1,0 +1,10 @@
+name: system_clock
+description: Read the fixed demo clock. The timestamp is a fixture, not the host clock.
+user_input: What does the system clock report?
+max_steps: 4
+expect:
+  status: ok
+  tool_sequence:
+    - clock
+  answer_contains:
+    - "2026-01-15T09:00:00Z"

@@ -1,0 +1,15 @@
+name: empty_tool_result
+description: Lookup is forced to return an empty string for a fact that exists.
+user_input: What is the capital of France?
+max_steps: 4
+inject:
+  kind: empty_result
+  tool: lookup
+expect:
+  status: ok
+  tool_sequence:
+    - lookup
+  answer_contains:
+    - No matching information was found.
+  answer_not_contains:
+    - Paris
